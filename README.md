@@ -1,29 +1,54 @@
 # Friction
+Friction is a tool to check your project for common sources of contributor friction.
 
-TODO: Write a gem description
+[![Friction](https://raw.github.com/rafalchmiel/hendrix/gh-pages/screenshot.png)](https://github.com/rafalchmiel/friction)
 
-## Installation
+## Philosophy
+If you want people to use and contribute to your project, you need to start by answering their most basic questions. Friction is a command line script that will check your project for common answers to these questions. *Read more at [pengwynn/flint](https://github.com/pengwynn/flint#philosophy).*
 
-Add this line to your application's Gemfile:
+### Inspiration
+Friction takes its inspiration from [Flint](https://github.com/pengwynn/flint). Friction is written in Ruby instead of Go, has a nicer interface, and some extra features that Flint doesn't have.
 
-    gem 'friction'
+## Quick Start
+Install the latest stable version of Friction via RubyGems:
 
-And then execute:
+```bash
+$ gem install friction
+```
 
-    $ bundle
+Run `friction` from your project root to check for some common ways to improve the experience for potential contributors. Here's some example output:
 
-Or install it yourself as:
+```bash
+$ friction
+[ERROR] README not found.
+[ERROR] CONTRIBUTING guide not found.
+[ERROR] LICENSE not found.
+[ERROR] Bootstrap script not found.
+[ERROR] Test script not found.
+```
 
-    $ gem install friction
+To skip certain files use the `--skip` flag, like this:
 
-## Usage
+```bash
+$ friction --skip bootstrap:test
+[ERROR] README not found.
+[ERROR] CONTRIBUTING guide not found.
+[ERROR] LICENSE not found.
+```
 
-TODO: Write usage instructions here
+The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `license`, `bootstrap`, and `test`.
 
-## Contributing
+## Development
+If you want to hack on Friction locally, we try to make [bootstrapping the project](http://wynnnetherland.com/linked/2013012801/bootstrapping-consistency) as painless as possible. Just clone and run:
 
-1. Fork it ( http://github.com/<my-github-username>/friction/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+```bash
+$ script/bootstrap
+```
+
+This will install project dependencies and get you up and running. If you want to run a Ruby console to poke on Friction, you can crank one up with:
+
+```bash
+$ script/console
+```
+
+Using the scripts in `./script` instead of `bundle exec rspec`, `bundle console`, etc. ensures your dependencies are up-to-date.
