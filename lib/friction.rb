@@ -24,8 +24,8 @@ module Friction
       Slop.parse help: true, ignore_case: true do
         banner 'Usage: friction [--skip readme:contributing:...]'.blue
 
-        on :s, :skip=, 'Skip check(s)', as: Array, delimiter: ':'
-        on :v, :version, 'Display version'
+        on :s, :skip=, 'Skip check(s).', as: Array, delimiter: ':'
+        on :v, :version, 'Display version.'
       end
     end
 
