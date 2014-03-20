@@ -1,0 +1,35 @@
+require 'simplecov'
+require 'coveralls'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start { add_filter '/spec/' }
+
+$LOAD_PATH.unshift(File.dirname(File.realpath(__FILE__)) + '/../lib')
+require 'friction'
+
+require 'fakefs/spec_helpers'
+
+RSpec.configure do |config|
+  config.include FakeFS::SpecHelpers
+  config.before(:all) do
+    $stderr = File.new('/dev/null', 'w')
+    $stdout = File.new('/dev/null', 'w')
+  end
+  config.expect_with(:rspec) { |c| c.syntax = :expect }
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+  config.run_all_when_everything_filtered = true
+  config.filter_run :focus
+  config.order = 'random'
+end
+
+def capture_stdout(&block)
+  old = $stdout
+  $stdout = fake = StringIO.new
+  block.call
+  fake.string
+ensure
+  $stdout = old
+end
