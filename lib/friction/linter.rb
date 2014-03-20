@@ -30,6 +30,12 @@ module Friction
       log 'Test script not found.' unless check? 'script/test'
     end
 
+    # Checks/logs if .gitignore exists (if directory is Git repository)
+    # @return [nil,true] nil if file exists, true if not
+    def check_gitignore
+      (log '.gitignore not found.' unless check? '.gitignore') if check? '.git'
+    end
+
     private
 
     def check?(filename)

@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Friction do
   describe '#run!' do
     it 'lists files that were\'t found' do
+      FileUtils.mkdir '.git'
       FileUtils.touch 'README.md'
       FileUtils.touch 'LICENSE'
 
@@ -13,6 +14,7 @@ describe Friction do
       expect(stdout).not_to include 'LICENSE'
       expect(stdout).to include 'Bootstrap script'
       expect(stdout).to include 'Test script'
+      expect(stdout).to include '.gitignore'
     end
   end
 
@@ -70,6 +72,20 @@ describe Friction do
       FileUtils.mkdir 'script'
       FileUtils.touch 'script/test'
       expect(Friction.check_test).to eq nil
+    end
+  end
+
+  describe '#check_gitignore' do
+    it 'returns true if .gitignore is not found (or not Git repository)' do
+      expect(Friction.check_gitignore).to eq nil
+      FileUtils.mkdir '.git'
+      expect(Friction.check_gitignore).to eq true
+    end
+
+    it 'returns nil if .gitignore is found (if Git repository)' do
+      FileUtils.mkdir '.git'
+      FileUtils.touch '.gitignore'
+      expect(Friction.check_gitignore).to eq nil
     end
   end
 end
