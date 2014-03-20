@@ -1,7 +1,7 @@
 # Friction
 Friction is a tool to check your project for common sources of contributor friction.
 
-[![Friction](https://raw.github.com/rafalchmiel/friction/gh-pages/screenshot.png)](https://github.com/rafalchmiel/friction)
+[![Friction](https://raw.github.com/rafalchmiel/friction/gh-pages/example.gif)](https://github.com/rafalchmiel/friction)
 
 ## Philosophy
 If you want people to use and contribute to your project, you need to start by answering their most basic questions. Friction is a command line script that will check your project for common answers to these questions. *Read more at [pengwynn/flint](https://github.com/pengwynn/flint#philosophy).*
