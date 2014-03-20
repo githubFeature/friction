@@ -25,6 +25,7 @@ $ friction
 [ERROR] LICENSE not found.
 [ERROR] Bootstrap script not found.
 [ERROR] Test script not found.
+[ERROR] .gitignore not found.
 ```
 
 To skip certain files use the `--skip` flag, like this:
@@ -34,6 +35,7 @@ $ friction --skip bootstrap:test
 [ERROR] README not found.
 [ERROR] CONTRIBUTING guide not found.
 [ERROR] LICENSE not found.
+[ERROR] .gitignore not found.
 ```
 
 The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `license`, `bootstrap`, and `test`.
