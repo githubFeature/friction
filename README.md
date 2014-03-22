@@ -1,4 +1,4 @@
-# Friction [![Code Climate](https://codeclimate.com/github/rafalchmiel/friction.png)](https://codeclimate.com/github/rafalchmiel/friction)
+# Friction [![Build Status](https://travis-ci.org/rafalchmiel/friction.png?branch=master)](https://travis-ci.org/rafalchmiel/friction) [![Code Climate](https://codeclimate.com/github/rafalchmiel/friction.png)](https://codeclimate.com/github/rafalchmiel/friction)
 Friction is a tool to check your project for common sources of contributor friction.
 
 [![Friction](https://raw.github.com/rafalchmiel/friction/gh-pages/example.gif)](https://github.com/rafalchmiel/friction)
