@@ -36,7 +36,7 @@ $ friction --skip bootstrap:test
 [ERROR] .gitignore not found (see http://git.io/pevJkA)
 ```
 
-The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `license`, `bootstrap`, `test`, and `gitignore`.
+The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `license`, `bootstrap`, `test`, and `gitignore`. *Read more at [friction/wiki](https://github.com/rafalchmiel/friction/wiki).*
 
 ## Development
 If you want to hack on Friction locally, we try to make [bootstrapping the project](http://wynnnetherland.com/linked/2013012801/bootstrapping-consistency) as painless as possible. Just clone and run:
