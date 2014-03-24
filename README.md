@@ -20,20 +20,20 @@ Run `friction` from your project root to check for some common ways to improve t
 
 ```bash
 $ friction
-[ERROR] CONTRIBUTING guide not found.
-[ERROR] LICENSE not found.
-[ERROR] Bootstrap script not found.
-[ERROR] Test script not found.
-[ERROR] .gitignore not found.
+[ERROR] CONTRIBUTING guide not found (see http://git.io/g_0mVQ)
+[ERROR] LICENSE not found (see http://git.io/pFMQMQ)
+[ERROR] Bootstrap script not found (see http://git.io/jZoRYA)
+[ERROR] Test script not found (see http://git.io/oo21Jw)
+[ERROR] .gitignore not found (see http://git.io/pevJkA)
 ```
 
 If some checks do not apply to your project, skip certain files using the `--skip` flag, like this:
 
 ```bash
 $ friction --skip bootstrap:test
-[ERROR] CONTRIBUTING guide not found.
-[ERROR] LICENSE not found.
-[ERROR] .gitignore not found.
+[ERROR] CONTRIBUTING guide not found (see http://git.io/g_0mVQ)
+[ERROR] LICENSE not found (see http://git.io/pFMQMQ)
+[ERROR] .gitignore not found (see http://git.io/pevJkA)
 ```
 
 The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `license`, `bootstrap`, `test`, and `gitignore`.
