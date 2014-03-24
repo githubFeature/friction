@@ -16,11 +16,10 @@ Install the latest stable version of Friction via RubyGems:
 $ gem install friction
 ```
 
-Run `friction` from your project root to check for some common ways to improve the experience for potential contributors. Here's some example output:
+Run `friction` from your project root to check for some common ways to improve the experience for potential contributors. Here's some example output for a [project](https://github.com/badges/badger) I've worked on a few months ago:
 
 ```bash
 $ friction
-[ERROR] README not found.
 [ERROR] CONTRIBUTING guide not found.
 [ERROR] LICENSE not found.
 [ERROR] Bootstrap script not found.
@@ -28,11 +27,10 @@ $ friction
 [ERROR] .gitignore not found.
 ```
 
-To skip certain files use the `--skip` flag, like this:
+If some checks do not apply to your project, skip certain files using the `--skip` flag, like this:
 
 ```bash
 $ friction --skip bootstrap:test
-[ERROR] README not found.
 [ERROR] CONTRIBUTING guide not found.
 [ERROR] LICENSE not found.
 [ERROR] .gitignore not found.
