@@ -4,7 +4,7 @@ Friction is a tool to check your project for common sources of contributor frict
 [![Friction](https://raw.github.com/rafalchmiel/friction/gh-pages/example.gif)](https://github.com/rafalchmiel/friction)
 
 ## Philosophy
-If you want people to use and contribute to your project, you need to start by answering their most basic questions. Friction is a command line script that will check your project for common answers to these questions. *Read more at [pengwynn/flint](https://github.com/pengwynn/flint#philosophy).*
+If you want people to use and contribute to your project, you need to start by answering their most basic questions. Friction is a command line script that will check your project for common answers to these questions. *Read more at [friction/wiki](https://github.com/rafalchmiel/friction/wiki).*
 
 ### Inspiration
 Friction takes its inspiration from [Flint](https://github.com/pengwynn/flint). Friction is written in Ruby instead of Go, has a nicer interface, and some extra features that Flint doesn't have. *Read more at [rafalchmiel.com/decreasing-friction](http://rafalchmiel.com/decreasing-friction/).*
@@ -36,7 +36,7 @@ $ friction --skip bootstrap:test
 [ERROR] .gitignore not found (see http://git.io/pevJkA)
 ```
 
-The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `license`, `bootstrap`, `test`, and `gitignore`. *Read more at [friction/wiki](https://github.com/rafalchmiel/friction/wiki).*
+The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `license`, `bootstrap`, `test`, and `gitignore`.
 
 ## Development
 If you want to hack on Friction locally, we try to make [bootstrapping the project](http://wynnnetherland.com/linked/2013012801/bootstrapping-consistency) as painless as possible. Just clone and run:
