@@ -41,7 +41,7 @@ module Friction
     private
 
     def check?(filename)
-      !Dir.glob(filename).empty?
+      !Dir[filename].empty?
     end
 
     def log(message, source)
