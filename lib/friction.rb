@@ -7,14 +7,12 @@ require 'friction/version'
 # A tool to check your project for common sources of contributor friction.
 module Friction
   class << self
-    attr_accessor :opts, :skip
-
     # Sets up command line suite
     def run!
       @opts = slop_parse
       @skip = @opts[:skip] || []
 
-      display_version if @opts[:v]
+      display_version if @opts.version?
       run_checks
     end
 
@@ -23,7 +21,6 @@ module Friction
     def slop_parse
       Slop.parse help: true, ignore_case: true do
         banner 'Usage: friction [--skip readme:contributing:...]'.blue
-
         on :s, :skip=, 'Skip check(s).', as: Array, delimiter: ':'
         on :v, :version, 'Display version.'
       end
