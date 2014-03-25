@@ -44,8 +44,8 @@ module Friction
       !Dir[filename].empty?
     end
 
-    def log(message, source)
-      puts "[#{'ERROR'.red}] #{message.blue} (see http://git.io/#{source})"
+    def log(message, source, type = 'ERROR')
+      puts "[%s] %-38s (see http://git.io/%s)" % [type.red, message.blue, source]
       true
     end
   end
