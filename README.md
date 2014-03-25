@@ -16,24 +16,24 @@ Install the latest stable version of Friction via RubyGems:
 $ gem install friction
 ```
 
-Run `friction` from your project root to check for some common ways to improve the experience for potential contributors. Here's some example output for a [project](https://github.com/badges/badger) I've worked on a few months ago:
+Run `friction` from your project root to check for some common ways to improve the experience for potential contributors. Here's some example output:
 
 ```bash
 $ friction
-[ERROR] CONTRIBUTING guide not found (see http://git.io/g_0mVQ)
-[ERROR] LICENSE not found (see http://git.io/pFMQMQ)
-[ERROR] Bootstrap script not found (see http://git.io/jZoRYA)
-[ERROR] Test script not found (see http://git.io/oo21Jw)
-[ERROR] .gitignore not found (see http://git.io/pevJkA)
+[ERROR] README not found              (see http://git.io/yHosNA)
+[ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
+[ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
+[ERROR] Bootstrap script not found    (see http://git.io/jZoRYA)
+[ERROR] Test script not found         (see http://git.io/oo21Jw)
 ```
 
 If some checks do not apply to your project, skip certain files using the `--skip` flag, like this:
 
 ```bash
 $ friction --skip bootstrap:test
-[ERROR] CONTRIBUTING guide not found (see http://git.io/g_0mVQ)
-[ERROR] LICENSE not found (see http://git.io/pFMQMQ)
-[ERROR] .gitignore not found (see http://git.io/pevJkA)
+[ERROR] README not found              (see http://git.io/yHosNA)
+[ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
+[ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
 ```
 
 The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `license`, `bootstrap`, `test`, and `gitignore`.
