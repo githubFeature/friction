@@ -14,10 +14,7 @@ require 'fakefs/spec_helpers'
 
 RSpec.configure do |config|
   config.include FakeFS::SpecHelpers
-  config.before(:all) do
-    $stderr = File.new('/dev/null', 'w')
-    $stdout = File.new('/dev/null', 'w')
-  end
+  config.before(:all) { $stdout = File.new('/dev/null', 'w') }
   config.expect_with(:rspec) { |c| c.syntax = :expect }
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true

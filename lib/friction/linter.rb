@@ -45,7 +45,7 @@ module Friction
     end
 
     def log(message, source, type = 'ERROR')
-      puts "[%s] %-38s (see http://git.io/%s)" % [type.red, message.blue, source]
+      puts ' [%s] %-38s (see http://git.io/%s)' % [type.red, message.blue, source]
       true
     end
   end

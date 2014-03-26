@@ -2,19 +2,40 @@ require 'spec_helper'
 
 describe Friction do
   describe '#run!' do
-    it 'lists files that were\'t found' do
-      FileUtils.mkdir '.git'
-      FileUtils.touch 'README.md'
-      FileUtils.touch 'LICENSE'
+    context 'without recursive flag' do
+      it 'lists files that weren\'t found' do
+        FileUtils.mkdir '.git'
+        FileUtils.touch 'README.md'
+        FileUtils.touch 'LICENSE'
 
-      stdout = capture_stdout { Friction.run! }
+        stdout = capture_stdout { Friction.run! }
 
-      expect(stdout).not_to include 'README'
-      expect(stdout).to include 'CONTRIBUTING guide'
-      expect(stdout).not_to include 'LICENSE'
-      expect(stdout).to include 'Bootstrap script'
-      expect(stdout).to include 'Test script'
-      expect(stdout).to include '.gitignore'
+        expect(stdout).not_to include 'README'
+        expect(stdout).to include 'CONTRIBUTING guide'
+        expect(stdout).not_to include 'LICENSE'
+        expect(stdout).to include 'Bootstrap script'
+        expect(stdout).to include 'Test script'
+        expect(stdout).to include '.gitignore'
+      end
+    end
+
+    context 'with recursive flag' do
+      it 'lists files that weren\'t found' do
+        FileUtils.mkdir 'dir_1'
+        FileUtils.touch 'dir_1/README'
+        FileUtils.touch 'dir_1/LICENSE'
+        FileUtils.mkdir 'dir_2'
+        FileUtils.touch 'dir_2/README'
+        FileUtils.touch 'dir_2/LICENSE'
+
+        stdout = capture_stdout { Friction.run!(recursive: true) }
+
+        expect(stdout).to include 'dir_1'
+        expect(stdout).not_to include 'README'
+        expect(stdout).to include 'dir_2'
+        expect(stdout).not_to include 'LICENSE'
+        expect(stdout).to include 'CONTRIBUTING'
+      end
     end
   end
 
