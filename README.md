@@ -20,23 +20,44 @@ Run `friction` from your project root to check for some common ways to improve t
 
 ```bash
 $ friction
-[ERROR] README not found              (see http://git.io/yHosNA)
-[ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
-[ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
-[ERROR] Bootstrap script not found    (see http://git.io/jZoRYA)
-[ERROR] Test script not found         (see http://git.io/oo21Jw)
+/badger
+ [ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
+ [ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
+ [ERROR] Bootstrap script not found    (see http://git.io/jZoRYA)
+ [ERROR] Test script not found         (see http://git.io/oo21Jw)
+ [ERROR] .gitignore not found          (see http://git.io/pevJkA)
 ```
 
-If some checks do not apply to your project, skip certain files using the `--skip` flag, like this:
+If some checks do not apply to your project, skip certain files using the `--skip` (or `-s`) flag, like this:
 
 ```bash
 $ friction --skip bootstrap:test
-[ERROR] README not found              (see http://git.io/yHosNA)
-[ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
-[ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
+/badger
+ [ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
+ [ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
+ [ERROR] .gitignore not found          (see http://git.io/pevJkA)
 ```
 
 The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `license`, `bootstrap`, `test`, and `gitignore`.
+
+If you have a large number of projects you'd like to check with Friction, you can use the `--recursive` (or just `-r`) flag to recursively check every directory in the current working directory. Here's example output:
+
+```bash
+$ friction -r -s bootstrap:test
+/badger
+ [ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
+ [ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
+ [ERROR] .gitignore not found          (see http://git.io/pevJkA)
+/friction
+ Everything is in order!
+/hendrix
+ Everything is in order!
+/hendrix.wiki
+ [ERROR] README not found              (see http://git.io/yHosNA)
+ [ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
+ [ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
+ [ERROR] .gitignore not found          (see http://git.io/pevJkA)
+```
 
 ## Development
 If you want to hack on Friction locally, we try to make [bootstrapping the project](http://wynnnetherland.com/linked/2013012801/bootstrapping-consistency) as painless as possible. Just clone and run:
