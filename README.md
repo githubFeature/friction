@@ -28,6 +28,7 @@ $ friction
  [ERROR] .gitignore not found          (see http://git.io/pevJkA)
 ```
 
+### Skipping checks
 If some checks do not apply to your project, skip certain files using the `--skip` (or `-s`) flag, like this:
 
 ```bash
@@ -40,6 +41,7 @@ $ friction --skip bootstrap:test
 
 The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `license`, `bootstrap`, `test`, and `gitignore`.
 
+### Running checks recursively
 If you have a large number of projects you'd like to check with Friction, you can use the `--recursive` (or just `-r`) flag to recursively check every directory in the current working directory. Here's example output:
 
 ```bash
