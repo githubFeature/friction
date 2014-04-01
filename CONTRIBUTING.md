@@ -12,7 +12,7 @@
   11. Add, commit, and push your changes. For documentation-only fixes, please add `[ci skip]` to your commit message to avoid needless CI builds.
   12. Submit a pull request.
 
-## Adding checks
+## Adding Checks
   1. Research the files (or folders) you are going to check for. Are they commonly used in other open source projects?
   2. Create a [new issue](https://github.com/rafalchmiel/friction/issues/new) and describe the *checks* you want to add. Why should they be added? Are they good practice? If so, why? How does they decrease contributor friction?
   3. After discussing the *checks* with us, implement them (and follow the above contributing guide).
