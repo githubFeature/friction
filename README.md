@@ -61,6 +61,17 @@ $ friction -r -s bootstrap:test
  [ERROR] .gitignore not found          (see http://git.io/pevJkA)
 ```
 
+## Supported Ruby Versions
+Friction aims to support and is [tested against](https://travis-ci.org/rafalchmiel/friction) the following Ruby implementations:
+
+ - MRI 2.1.0
+ - MRI 2.0.0
+ - MRI 1.9.3
+
+If something doesn't work on one of these Ruby versions, it's a bug. Friction may inadvertently work (or seem to work) on other Ruby implementations, however support will only be provided for the versions listed above.
+
+If you would like Friction to support another Ruby version, you may volunteer to be a maintainer. Being a maintainer entails making sure all tests run and pass on that implementation. When something breaks on your implementation, you will be responsible for providing patches in a timely fashion. If critical issues for a particular implementation exist at the time of a major release, support for that Ruby version may be dropped.
+
 ## Development
 If you want to hack on Friction locally, we try to make [bootstrapping the project](http://wynnnetherland.com/linked/2013012801/bootstrapping-consistency) as painless as possible. Just clone and run:
 
