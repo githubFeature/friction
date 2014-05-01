@@ -1,7 +1,7 @@
 require 'slop'
 require 'colored'
 
-require 'friction/linter'
+require 'friction/checks'
 require 'friction/version'
 
 # A tool to check your project for common sources of contributor friction.
