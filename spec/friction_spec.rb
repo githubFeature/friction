@@ -70,6 +70,16 @@ describe Friction do
       FileUtils.touch 'LICENSE'
       expect(Friction.check_license).to eq nil
     end
+
+    it 'returns nil if MIT-LICENSE is found' do
+      FileUtils.touch 'MIT-LICENSE'
+      expect(Friction.check_license).to eq nil
+    end
+
+    it 'returns nil if LICENSE.md is found' do
+      FileUtils.touch 'LICENSE.md'
+      expect(Friction.check_license).to eq nil
+    end
   end
 
   describe '#check_bootstrap' do
