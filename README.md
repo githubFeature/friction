@@ -7,8 +7,7 @@ Friction is a tool to check your project for common sources of contributor frict
 If you want people to use and contribute to your project, you need to start by answering their most basic questions. Friction is a command line script that will check your project for common answers to these questions. *Read more at [friction/wiki](https://github.com/rafalchmiel/friction/wiki).*
 
 ### Inspiration
-Friction takes its inspiration from [Flint](https://github.com/pengwynn/flint). Friction is written in Ruby instead of Go, has a nicer interface, and some extra features that Flint doesn't have. *Read more at [rafalchmiel.com/decreasing-friction](http://rafalchmiel.com/decreasing-friction/).*
-
+Friction takes its inspiration from [Flint](https://github.com/pengwynn/flint). Friction is written in Ruby instead of Go, has a nicer interface, and some extra features that Flint doesn't have.
 ## Quick Start
 Install the latest stable version of Friction via RubyGems:
 
