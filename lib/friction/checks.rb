@@ -15,7 +15,7 @@ module Friction
     # Checks/logs if LICENSE exists
     # @return [nil,true] nil if file exists, true if not
     def check_license
-      log 'LICENSE not found', 'pFMQMQ' unless check? 'LICENSE*'
+      log 'LICENSE not found', 'pFMQMQ' unless check? '*LICENSE*'
     end
 
     # Checks/logs if bootstrap script exists
