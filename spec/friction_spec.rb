@@ -61,6 +61,17 @@ describe Friction do
     end
   end
 
+  describe '#check_code_of_conduct' do
+    it 'returns true if CODE_OF_CONDUCT guide is not found' do
+      expect(Friction.check_code_of_conduct).to eq true
+    end
+
+    it 'returns nil if CODE_OF_CONDUCT guide is found' do
+      FileUtils.touch 'CODE_OF_CONDUCT.md'
+      expect(Friction.check_code_of_conduct).to eq nil
+    end
+  end
+
   describe '#check_license' do
     it 'returns true if LICENSE is not found' do
       expect(Friction.check_license).to eq true
