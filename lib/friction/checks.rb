@@ -12,6 +12,12 @@ module Friction
       log 'CONTRIBUTING guide not found', 'g_0mVQ' unless check? 'CONTRIBUTING*'
     end
 
+    # Checks/logs if CODE_OF_CONDUCT exists
+    # @return [nil,true] nil if file exists, true if not
+    def check_code_of_conduct
+      log 'CODE_OF_CONDUCT guide not found', 'vJvR3' unless check? 'CODE_OF_CONDUCT*'
+    end
+
     # Checks/logs if LICENSE exists
     # @return [nil,true] nil if file exists, true if not
     def check_license
