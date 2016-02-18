@@ -1,8 +1,6 @@
 # Friction [![Build Status](https://travis-ci.org/rafalchmiel/friction.svg?branch=master)](https://travis-ci.org/rafalchmiel/friction) [![Coverage Status](https://coveralls.io/repos/rafalchmiel/friction/badge.svg?branch=master)](https://coveralls.io/r/rafalchmiel/friction?branch=master) [![Code Climate](https://codeclimate.com/github/rafalchmiel/friction.svg)](https://codeclimate.com/github/rafalchmiel/friction) [![Gem Version](https://badge.fury.io/rb/friction.svg)](https://rubygems.org/gems/friction)
 Friction is a tool to check your project for common sources of contributor friction.
 
-[![Friction](https://raw.github.com/rafalchmiel/friction/gh-pages/example.gif)](https://github.com/rafalchmiel/friction)
-
 ## Philosophy
 If you want people to use and contribute to your project, you need to start by answering their most basic questions. Friction is a command line script that will check your project for common answers to these questions. *Read more at [friction/wiki](https://github.com/rafalchmiel/friction/wiki).*
 
@@ -19,45 +17,52 @@ Run `friction` from your project root to check for some common ways to improve t
 
 ```bash
 $ friction
-/badger
- [ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
- [ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
- [ERROR] Bootstrap script not found    (see http://git.io/jZoRYA)
- [ERROR] Test script not found         (see http://git.io/oo21Jw)
- [ERROR] .gitignore not found          (see http://git.io/pevJkA)
+/repo
+ [ERROR] README not found                see http://git.io/yHosNA
+ [ERROR] CONTRIBUTING guide not found    see http://git.io/g_0mVQ
+ [ERROR] ISSUE_TEMPLATE not found        see http://git.io/vgpaA
+ [ERROR] PULL_REQUEST_TEMPLATE not found see http://git.io/vgpVk
+ [ERROR] CODE_OF_CONDUCT guide not found see http://git.io/vJvR3
+ [ERROR] LICENSE not found               see http://git.io/pFMQMQ
+ [ERROR] Bootstrap script not found      see http://git.io/jZoRYA
+ [ERROR] Test script not found           see http://git.io/oo21Jw
 ```
 
 ### Skipping checks
 If some checks do not apply to your project, skip certain files using the `--skip` (or `-s`) flag, like this:
 
 ```bash
-$ friction --skip bootstrap:test
-/badger
- [ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
- [ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
- [ERROR] .gitignore not found          (see http://git.io/pevJkA)
+$ friction --skip bootstrap:test:issue_template
+/repo
+ [ERROR] README not found                see http://git.io/yHosNA
+ [ERROR] CONTRIBUTING guide not found    see http://git.io/g_0mVQ
+ [ERROR] PULL_REQUEST_TEMPLATE not found see http://git.io/vgpVk
+ [ERROR] CODE_OF_CONDUCT guide not found see http://git.io/vJvR3
+ [ERROR] LICENSE not found               see http://git.io/pFMQMQ
 ```
 
-The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `license`, `bootstrap`, `test`, and `gitignore`.
+The arguments passed to `--skip` are separated by `:`. The possible arguments include `readme`, `contributing`, `issue_template`, `pull_request_template`, `code_of_conduct`, `license`, `bootstrap`, `test`, and `gitignore`.
 
 ### Running checks recursively
 If you have a large number of projects you'd like to check with Friction, you can use the `--recursive` (or just `-r`) flag to recursively check every directory in the current working directory. Here's example output:
 
 ```bash
-$ friction -r -s bootstrap:test
-/badger
- [ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
- [ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
- [ERROR] .gitignore not found          (see http://git.io/pevJkA)
-/friction
- Everything is in order!
-/hendrix
- Everything is in order!
-/hendrix.wiki
- [ERROR] README not found              (see http://git.io/yHosNA)
- [ERROR] CONTRIBUTING guide not found  (see http://git.io/g_0mVQ)
- [ERROR] LICENSE not found             (see http://git.io/pFMQMQ)
- [ERROR] .gitignore not found          (see http://git.io/pevJkA)
+$ friction -r -s bootstrap:test:issue_template
+/repo
+ [ERROR] README not found                see http://git.io/yHosNA
+ [ERROR] CONTRIBUTING guide not found    see http://git.io/g_0mVQ
+ [ERROR] PULL_REQUEST_TEMPLATE not found see http://git.io/vgpVk
+ [ERROR] CODE_OF_CONDUCT guide not found see http://git.io/vJvR3
+ [ERROR] LICENSE not found               see http://git.io/pFMQMQ
+/repo2
+ [ERROR] README not found                see http://git.io/yHosNA
+ [ERROR] CONTRIBUTING guide not found    see http://git.io/g_0mVQ
+ [ERROR] PULL_REQUEST_TEMPLATE not found see http://git.io/vgpVk
+ [ERROR] CODE_OF_CONDUCT guide not found see http://git.io/vJvR3
+ [ERROR] LICENSE not found               see http://git.io/pFMQMQ
+/repo3
+ [ERROR] PULL_REQUEST_TEMPLATE not found see http://git.io/vgpVk
+ [ERROR] CODE_OF_CONDUCT guide not found see http://git.io/vJvR3
 ```
 
 ## Supported Ruby Versions
