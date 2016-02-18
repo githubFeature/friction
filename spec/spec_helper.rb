@@ -16,7 +16,6 @@ RSpec.configure do |config|
   config.include FakeFS::SpecHelpers
   config.before(:all) { $stdout = File.new('/dev/null', 'w') }
   config.expect_with(:rspec) { |c| c.syntax = :expect }
-  config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
   config.order = 'random'

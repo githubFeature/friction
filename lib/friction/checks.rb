@@ -9,7 +9,25 @@ module Friction
     # Checks/logs if CONTRIBUTING guide exists
     # @return [nil,true] nil if file exists, true if not
     def check_contributing
-      log 'CONTRIBUTING guide not found', 'g_0mVQ' unless check? 'CONTRIBUTING*'
+      unless check? 'CONTRIBUTING*', '.github/CONTRIBUTING*'
+        log 'CONTRIBUTING guide not found', 'g_0mVQ'
+      end
+    end
+
+    # Checks/logs if ISSUE_TEMPLATE exists
+    # @return [nil,true] nil if file exists, true if not
+    def check_issue_template
+      unless check? 'ISSUE_TEMPLATE*', '.github/ISSUE_TEMPLATE*'
+        log 'ISSUE_TEMPLATE not found', 'vgpaA'
+      end
+    end
+
+    # Checks/logs if PULL_REQUEST_TEMPLATE exists
+    # @return [nil,true] nil if file exists, true if not
+    def check_pull_request_template
+      unless check? 'PULL_REQUEST_TEMPLATE*', '.github/PULL_REQUEST_TEMPLATE*'
+        log 'PULL_REQUEST_TEMPLATE not found', 'vgpVk'
+      end
     end
 
     # Checks/logs if CODE_OF_CONDUCT exists
@@ -46,12 +64,13 @@ module Friction
 
     private
 
-    def check?(filename)
-      !Dir[filename].empty?
+    def check?(*filenames)
+      filenames.each { |f| return true if !Dir[f].empty? }
+      false
     end
 
     def log(message, source, type = 'ERROR')
-      puts format(' [%s] %-38s see http://git.io/%s', type.red, message.blue, source)
+      puts format(' [%s] %-40s see http://git.io/%s', type.red, message.blue, source)
       true
     end
   end

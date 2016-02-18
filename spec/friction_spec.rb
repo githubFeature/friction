@@ -59,6 +59,46 @@ describe Friction do
       FileUtils.touch 'CONTRIBUTING.md'
       expect(Friction.check_contributing).to eq nil
     end
+
+    it 'returns nil if .github/CONTRIBUTING guide is found' do
+      FileUtils.mkdir '.github'
+      FileUtils.touch '.github/CONTRIBUTING.txt'
+      expect(Friction.check_contributing).to eq nil
+    end
+  end
+
+  describe '#check_issue_template' do
+    it 'returns true if ISSUE_TEMPLATE is not found' do
+      expect(Friction.check_issue_template).to eq true
+    end
+
+    it 'returns nil if ISSUE_TEMPLATE is found' do
+      FileUtils.touch 'ISSUE_TEMPLATE.md'
+      expect(Friction.check_issue_template).to eq nil
+    end
+
+    it 'returns nil if .github/ISSUE_TEMPLATE is found' do
+      FileUtils.mkdir '.github'
+      FileUtils.touch '.github/ISSUE_TEMPLATE.txt'
+      expect(Friction.check_issue_template).to eq nil
+    end
+  end
+
+  describe '#check_pull_request_template' do
+    it 'returns true if PULL_REQUEST_TEMPLATE is not found' do
+      expect(Friction.check_pull_request_template).to eq true
+    end
+
+    it 'returns nil if PULL_REQUEST_TEMPLATE is found' do
+      FileUtils.touch 'PULL_REQUEST_TEMPLATE.md'
+      expect(Friction.check_pull_request_template).to eq nil
+    end
+
+    it 'returns nil if .github/PULL_REQUEST_TEMPLATE is found' do
+      FileUtils.mkdir '.github'
+      FileUtils.touch '.github/PULL_REQUEST_TEMPLATE.txt'
+      expect(Friction.check_pull_request_template).to eq nil
+    end
   end
 
   describe '#check_code_of_conduct' do
