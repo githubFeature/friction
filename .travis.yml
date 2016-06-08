@@ -11,4 +11,5 @@ matrix:
   allow_failures:
     - rvm:
       - 1.9.3
+      - 2.3
 script: bundle exec rspec
