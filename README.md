@@ -68,7 +68,6 @@ $ friction -r -s bootstrap:test:issue_template
 ## Supported Ruby Versions
 Friction aims to support and is [tested against](https://travis-ci.org/rafalchmiel/friction) the following Ruby implementations:
 
- - MRI 2.3.x
  - MRI 2.2.x
  - MRI 2.1.x
  - MRI 2.0.0
