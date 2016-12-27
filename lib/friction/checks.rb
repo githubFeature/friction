@@ -3,14 +3,14 @@ module Friction
     # Checks/logs if README exists
     # @return [nil,true] nil if file exists, true if not
     def check_readme
-      log 'README not found', 'yHosNA' unless check? 'README*'
+      log 'README not found', 'vMUzv' unless check? 'README*'
     end
 
     # Checks/logs if CONTRIBUTING guide exists
     # @return [nil,true] nil if file exists, true if not
     def check_contributing
       unless check? 'CONTRIBUTING*', '.github/CONTRIBUTING*'
-        log 'CONTRIBUTING guide not found', 'g_0mVQ'
+        log 'CONTRIBUTING guide not found', 'vMUzT'
       end
     end
 
@@ -18,7 +18,7 @@ module Friction
     # @return [nil,true] nil if file exists, true if not
     def check_issue_template
       unless check? 'ISSUE_TEMPLATE*', '.github/ISSUE_TEMPLATE*'
-        log 'ISSUE_TEMPLATE not found', 'vgpaA'
+        log 'ISSUE_TEMPLATE not found', 'vMUzI'
       end
     end
 
@@ -26,7 +26,7 @@ module Friction
     # @return [nil,true] nil if file exists, true if not
     def check_pull_request_template
       unless check? 'PULL_REQUEST_TEMPLATE*', '.github/PULL_REQUEST_TEMPLATE*'
-        log 'PULL_REQUEST_TEMPLATE not found', 'vgpVk'
+        log 'PULL_REQUEST_TEMPLATE not found', 'vMUzt'
       end
     end
 
@@ -39,26 +39,26 @@ module Friction
     # Checks/logs if LICENSE exists
     # @return [nil,true] nil if file exists, true if not
     def check_license
-      log 'LICENSE not found', 'pFMQMQ' unless check? '*LICENSE*'
+      log 'LICENSE not found', 'vMUzY' unless check? '*LICENSE*'
     end
 
     # Checks/logs if bootstrap script exists
     # @return [nil,true] nil if file exists, true if not
     def check_bootstrap
-      log 'Bootstrap script not found', 'jZoRYA' unless check? 'script/bootstrap*'
+      log 'Bootstrap script not found', 'vMUzs' unless check? 'script/bootstrap*'
     end
 
     # Checks/logs if test script exists
     # @return [nil,true] nil if file exists, true if not
     def check_test
-      log 'Test script not found', 'oo21Jw' unless check? 'script/test*'
+      log 'Test script not found', 'vMUzn' unless check? 'script/test*'
     end
 
     # Checks/logs if .gitignore exists (if directory is Git repository)
     # @return [nil,true] nil if file exists, true if not
     def check_gitignore
       if check? '.git'
-        log '.gitignore not found', 'pevJkA' unless check? '.gitignore'
+        log '.gitignore not found', 'vMUzl' unless check? '.gitignore'
       end
     end
 
