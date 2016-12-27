@@ -71,7 +71,6 @@ Friction aims to support and is [tested against](https://travis-ci.org/rafalchmi
  - MRI 2.2.x
  - MRI 2.1.x
  - MRI 2.0.0
- - MRI 1.9.3
 
 If something doesn't work on one of these Ruby versions, it's a bug. Friction may inadvertently work (or seem to work) on other Ruby implementations, however support will only be provided for the versions listed above.
 
