@@ -143,6 +143,12 @@ describe Friction do
       FileUtils.touch 'script/bootstrap'
       expect(Friction.check_bootstrap).to eq nil
     end
+
+    it 'returns nil if bootstrap script is found' do
+      FileUtils.mkdir 'scripts'
+      FileUtils.touch 'scripts/bootstrap'
+      expect(Friction.check_bootstrap).to eq nil
+    end
   end
 
   describe '#check_test' do
@@ -153,6 +159,12 @@ describe Friction do
     it 'returns nil if test script is found' do
       FileUtils.mkdir 'script'
       FileUtils.touch 'script/test'
+      expect(Friction.check_test).to eq nil
+    end
+
+    it 'returns nil if test script is found' do
+      FileUtils.mkdir 'scripts'
+      FileUtils.touch 'scripts/test'
       expect(Friction.check_test).to eq nil
     end
   end

@@ -45,13 +45,13 @@ module Friction
     # Checks/logs if bootstrap script exists
     # @return [nil,true] nil if file exists, true if not
     def check_bootstrap
-      log 'Bootstrap script not found', 'vMUzs' unless check? 'script/bootstrap*'
+      log 'Bootstrap script not found', 'vMUzs' unless check? 'script*/bootstrap*'
     end
 
     # Checks/logs if test script exists
     # @return [nil,true] nil if file exists, true if not
     def check_test
-      log 'Test script not found', 'vMUzn' unless check? 'script/test*'
+      log 'Test script not found', 'vMUzn' unless check? 'script*/test*'
     end
 
     # Checks/logs if .gitignore exists (if directory is Git repository)
