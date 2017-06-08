@@ -1,5 +1,5 @@
 module Friction
   # Current version
   # @return [String]
-  VERSION = '0.7.0'.freeze
+  VERSION = '0.8'.freeze
 end
